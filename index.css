@@ -2,8 +2,8 @@ div.CodeMirror {
     color: rgb(31, 31, 31);
     height: 100vh;
     padding: 0.5em;
-    font-size: 13pt;
-    font-family: 'Ubuntu Mono', monospace;
+    font-size: 12pt;
+    /* font-family: 'Ubuntu Mono', monospace; */
     /* font-family: 'Source Code Pro', monospace; */
 }
 
@@ -12,33 +12,10 @@ html, body{
     overflow: auto;
 }
 
-span.cm-tag:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-span.cm-page:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
 span.cm-url {
     cursor: pointer;
 }
 
 span.cm-link {
     cursor: pointer;
-}
-
-span.cm-header-1 {
-    font-size: larger;
-}
-
-.cm-variable-2 {
-    color: darkslategray;
-}
-
-.cm-header-2 {
-    font-weight: 400;
-    color: darkslategray;
 }

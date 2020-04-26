@@ -1,7 +1,7 @@
 
 var editor = CodeMirror(document.body, {
     mode: "gfm-mindless",
-    theme: "monokai",
+    theme: "mindless",
     lineWrapping: true
 });
 
