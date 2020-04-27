@@ -64,7 +64,7 @@
         if (stream.sol() && stream.match(/^```+/)) {
           stream.skipToEnd();
           state.codeBlock = true;
-          return null;
+          return "null";
         }
         // If this block is changed, it may need to be updated in Markdown mode
         if (stream.peek() === '`') {
