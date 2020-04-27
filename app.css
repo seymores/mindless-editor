@@ -6,8 +6,46 @@
     z-index: 1000;
     border-right: 1px solid rgba(0,0,0,.1);
     overflow-y: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: rgb(230, 230, 230);
+}
+
+.sidebar-header {
+    position: relative;
+    padding: 1em;
 }
 
 .content {
     order: 1;
+}
+
+.sidebar-item {
+    font-size: normal;
+    padding-left: 1em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.1em;  
+}
+
+main.content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+div#editor {
+    padding: 1em;
+}
+
+span#home a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+ul.file-list > li:nth-of-type(odd) {
+    color: rgb(92, 91, 91);
+}
+
+ul.file-list > li:nth-of-type(even) {
+    color: rgb(41, 31, 31);
 }

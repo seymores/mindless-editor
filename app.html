@@ -24,109 +24,245 @@
 </head>
 
 <body>
-
     <div class="container-fluid">
-        <div class="row row-cols-2 flex-xl-nowrap">        
+        <div class="row row-cols-2 flex-xl-nowrap">
 
-        <!-- Sidebar -->
-        <div class="col-lg-3 col-xl-2 col-sm-4 sidebar sticky-top">
-        <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+            <!-- Sidebar -->
+            <div class="col-lg-4 col-xl-2 col-md-4 col-sm-3 sidebar sticky-top">
+                <div class="sidebar-header">
+                    <span id="home"
+                        style="padding-left: 0.6em; letter-spacing: 1px; font-size: larger; font-stretch: extra-expanded; "><a
+                            href="#"><span class="fas fa-inbox fa-lg"></span> Dashboard</span></a></span>
+                </div>
+                <nav id="sidebar" class="">
+                    <ul class="file-list list-unstyled components">
+                        <li class="sidebar-item">
+                            202002031200 Welcome to Mindless
+                        </li>
+                        <li class="sidebar-item">202001292349 Clojure MVC</li>
+                        <li class="sidebar-item">202001141204 Clojure</li>
+                        <li class="sidebar-item">202001141057 Tech Radar</li>
+                        <li class="sidebar-item">202001021805 Idea Bank</li>
+                        <li class="sidebar-item disabled" aria-disabled="true">202002031200 IAM</li>
+                        <li class="sidebar-item">202001292349 Clojure MVC</li>
+                        <li class="sidebar-item">202001141204 Clojure</li>
+                        <li class="sidebar-item">202001141057 Tech Radar</li>
+                        <li class="sidebar-item">202001021805 Idea Bank</li>
+                        <li class="sidebar-item disabled" aria-disabled="true">202002031200 IAM</li>
+                        <li class="sidebar-item">202001292349 Clojure MVC</li>
+                        <li class="sidebar-item">202001141204 Clojure</li>
+                        <li class="sidebar-item">202001141057 Tech Radar</li>
+                        <li class="sidebar-item">202001021805 Idea Bank</li>
+                        <li class="sidebar-item">202001292349 Clojure MVC</li>
+                        <li class="sidebar-item">202001141204 Clojure</li>
+                        <li class="sidebar-item">202001141057 Tech Radar</li>
+                        <li class="sidebar-item">202001021805 Idea Bank</li>
+                        <li class="sidebar-item">202001292349 Clojure MVC</li>
+                        <li class="sidebar-item">202001141204 Clojure</li>
+                        <li class="sidebar-item">202001141057 Tech Radar</li>
+                        <li class="sidebar-item">202001021805 Idea Bank</li>
+                    </ul>
+                </nav>
             </div>
-            <ul class="list-unstyled components">
-                <p>Recent Documents</p>
-                <li class="list-group-item disabled" aria-disabled="true">202002031200 IAM</li>
-                <li class="list-group-item">202001292349 Clojure MVC</li>
-                <li class="list-group-item">202001141204 Clojure</li>
-                <li class="list-group-item">202001141057 Tech Radar</li>
-                <li class="list-group-item">202001021805 Idea Bank</li>                
-                <li class="list-group-item disabled" aria-disabled="true">202002031200 IAM</li>
-                <li class="list-group-item">202001292349 Clojure MVC</li>
-                <li class="list-group-item">202001141204 Clojure</li>
-                <li class="list-group-item">202001141057 Tech Radar</li>
-                <li class="list-group-item">202001021805 Idea Bank</li>
-                <li class="list-group-item disabled" aria-disabled="true">202002031200 IAM</li>
-                <li class="list-group-item">202001292349 Clojure MVC</li>
-                <li class="list-group-item">202001141204 Clojure</li>
-                <li class="list-group-item">202001141057 Tech Radar</li>
-                <li class="list-group-item">202001021805 Idea Bank</li>
-                <li class="list-group-item">202001292349 Clojure MVC</li>
-                <li class="list-group-item">202001141204 Clojure</li>
-                <li class="list-group-item">202001141057 Tech Radar</li>
-                <li class="list-group-item">202001021805 Idea Bank</li>
-                <li class="list-group-item">202001292349 Clojure MVC</li>
-                <li class="list-group-item">202001141204 Clojure</li>
-                <li class="list-group-item">202001141057 Tech Radar</li>
-                <li class="list-group-item">202001021805 Idea Bank</li>
-            </ul>
-        </nav>
+
+            <!-- Page Content -->
+            <main id="content" class="content col-lg-8 col-md-8 col-xl-10 col-sm-8 sticky-top">
+
+                <div class="sticky-top form-group" style="background-color: rgb(236, 236, 236); padding: 0.5em; border-bottom: 1px solid rgba(0,0,0,.1);">
+                    <input type="text" name="search" placeholder="Search by tag or filter" class="form-control"></input>
+                </div>
+
+                <div id="editor">
+                    <h1>Content</h1>
+
+                    <div>
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                    </div>
+
+                    <h1>Content</h1>
+
+                    <div>
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility
+                        classes. To change the gutters in a given row, pair a negative margin utility on the .row and
+                        matching padding utilities on the .cols. The .container or .container-fluid parent may need to
+                        be
+                        adjusted too to avoid unwanted overflow, using again matching padding utility.
+
+                        Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above.
+                        We’ve
+                        increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row
+                        and
+                        then adjusted the .container wrapper with .px-lg-5.
+                    </div>
+                </div>
+
+            </main>
+
         </div>
-
-        <!-- Page Content -->
-        <main id="content" class="content col-lg-9 col-xl-10 col-sm-8 sticky-top">
-
-                    <h1>Content</h1>
-
-                    <div>
-                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-                    </div>
-
-                    <h1>Content</h1>
-
-                    <div>
-                        Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the .row and matching padding utilities on the .cols. The .container or .container-fluid parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
-
-Here’s an example of customizing the Bootstrap grid at the large (lg) breakpoint and above. We’ve increased the .col padding with .px-lg-5, counteracted that with .mx-lg-n5 on the parent .row and then adjusted the .container wrapper with .px-lg-5.
-                    </div>
-
-        </main>
-        
-    </div>
     </div>
 
 
