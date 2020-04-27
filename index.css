@@ -1,8 +1,7 @@
 div.CodeMirror {
-    color: rgb(31, 31, 31);
     height: 100vh;
-    padding: 0.5em;
-    font-size: 12pt;
+    padding: 1em;
+    font-size: 13pt;
     /* font-family: 'Ubuntu Mono', monospace; */
     /* font-family: 'Source Code Pro', monospace; */
 }
@@ -12,10 +11,4 @@ html, body{
     overflow: auto;
 }
 
-span.cm-url {
-    cursor: pointer;
-}
 
-span.cm-link {
-    cursor: pointer;
-}
