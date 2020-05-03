@@ -1,5 +1,6 @@
 
-var editor = CodeMirror(document.body, {
+const editorDiv = document.getElementById("mindlessEditor") || document.body;
+const editor = CodeMirror(editorDiv, {
     mode: "gfm-mindless",
     theme: "mindless",
     lineWrapping: true
