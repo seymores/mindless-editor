@@ -2,7 +2,7 @@
   "name": "mindful",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "electron.js",
   "directories": {
     "lib": "lib"
   },
@@ -10,9 +10,13 @@
     "cssnano": "^4.1.10",
     "theme": "^0.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron": "^8.2.5",
+    "electron-reload": "^1.5.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron electron.js"
   },
   "repository": {
     "type": "git",

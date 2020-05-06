@@ -9,11 +9,15 @@ div.CodeMirror {
 html, body{ 
     min-height: 100vh;
     overflow: auto;
+    background-color: rgb(210, 210, 210);
+}
+
+button {
+    -webkit-app-region: no-drag;
 }
 
 .sidebar {
     position: sticky;
-    flex: 0 1 300px;
     order: 0;
     height: 100vh;
     z-index: 1000;
@@ -49,9 +53,9 @@ main.content {
 }
 
 main#editor-body {    
-    margin-top: 50px;
+    margin-top: 75px;
     overflow: hidden;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 75px);
     padding: 0px;
 }
 
@@ -60,16 +64,16 @@ div#editor {
 }
 
 div.editor-body {
-    background-color: darkgoldenrod;
-    height: calc(100vh - 50px);
+    background-color: rgb(254, 254, 254);
+    height: calc(100vh - 60px);
     overflow: scroll;
 }
 
 .searchbar {
     height: 50px;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(210, 210, 210);
     padding-left: 1em;
-    /* border-bottom: 1px solid rgba(109, 109, 109, 0.1); */
+    border-bottom: 1px solid rgba(109, 109, 109, 0.1);
     margin-bottom: 1px;
 }
 
