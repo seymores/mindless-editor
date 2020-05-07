@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "cssnano": "^4.1.10",
+    "jquery": "^3.5.1",
     "theme": "^0.1.0"
   },
   "devDependencies": {

@@ -6,7 +6,8 @@ $(".CodeMirror").on("click", ".cm-link", (e) => {
 
 $(".CodeMirror").on("click", ".cm-url", (e) => {
     const url = $(e.target).text().replace(/[\(\)]+/g, '');
-    window.open(url, "_blank");    
+    // window.open(url, "_blank");  
+    shell.openExternal(url);  
 });
 
 $(".CodeMirror").on("click", ".cm-page", (e) => {

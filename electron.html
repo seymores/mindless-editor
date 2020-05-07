@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="lib/codemirror.css">
     <link rel="stylesheet" href="addon/dialog/dialog.css">
     <link rel="stylesheet" href="addon/search/matchesonscrollbar.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
     <link rel="stylesheet" type="text/css" href="theme/mindless.css">
     <link rel="stylesheet" href="app.css">
 
@@ -51,22 +51,29 @@
                 class="fa fa-chevron-right"></i></a>
 
         <span class="fa fa-search form-control-feedback"></span>
-        <input type="text" name="search" placeholder="Type ^help or ^dashboard" class="form-control" style="border-color: rgb(177, 177, 177);"></input>
-        <!-- <a class="navbar-item searchbar-navi-button" title="Get help" href="#"><i class="fa fa-question-circle"></i></a> -->
+        <input type="text" id="searchinput" name="searchinput" placeholder="Type ^help or ^dashboard" class="form-control" style="border-color: rgb(177, 177, 177);"></input>
     </nav>
 
-    <main id="editor-body" class="container-fluid" style="-webkit-app-region: no-drag;">
-        <div class="row no-gutters">
-            <div id="sidebar" class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 sidebar">
-                sidebar
+    <main class="container-fluid" style="-webkit-app-region: no-drag; margin-top: 2em">
+        <div id="mindlessEditor" class="row row-cols-2 no-gutters">
+            <div id="sidebar" class="col-sm-4 col-md-3 col-lg-3 col-xl-2 sidebar">
+                <ul id="file-list" class="list-group">                    
+                </ul>
             </div>
 
-            <div id="main" class="col-8 col-sm-8 col-md-9 col-lg-10 col-xl-10 ">
-                <div class="editor-body">
+            <div id="main" class="col-sm-8 col-md-9 col-lg-9 col-xl-10 ">
+                <div id="codemirror-editor" >
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    
 </body>
 
 </html>

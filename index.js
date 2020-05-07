@@ -1,12 +1,33 @@
+const $ = require('jquery')
+const { shell } = require('electron')
+const {loadFiles} = require('./files')
 
-const editorDiv = document.getElementById("mindlessEditor") || document.body;
-const editor = CodeMirror(editorDiv, {
-    mode: "gfm-mindless",
-    theme: "mindless",
-    lineWrapping: true
-});
 
-function setupEditor(editor) {
+// editor.on("mousedown", (instance, event) => {
+        
+//     const target = $(event.target)
+//     console.log(target);
+
+//     switch(event.target.className) {
+//         case 'cm-tag': console.log(">>> tag=", event.target.textContent)
+//         break;
+//         case 'cm-link': console.log(">>> link=", event.target.textContent)
+//         break;
+//         case 'cm-url': console.log(">>> url=", event.target.textContent)
+//         break;
+//         case 'cm-page': console.log(">>> page=", event.target.textContent)
+//         break;
+//         default: // do nothing
+//     }
+// });
+
+function setupEditor() {
+    const editorDiv = document.getElementById("codemirror-editor"); // || document.getElementById("mindlessEditor") || document.body;
+    const editor = CodeMirror(editorDiv, {
+        mode: "gfm-mindless",
+        theme: "mindless",
+        lineWrapping: true
+    });
 
     editor.onkeyup = () => {
         localStorage.setItem("content", editor.textContent);
@@ -26,6 +47,30 @@ function setupEditor(editor) {
     };
 
     return editor;
+}
+
+function setupMindlessEventHandler() {
+    $(".CodeMirror").on("click", ".cm-link", (e) => {
+        const url = $(e.target).next('.cm-url').text().replace(/[\(\)]+/g, '') || $(e.target).text().replace(/[\(\)]+/g, '');
+        shell.openExternal(url);  
+    });
+    
+    $(".CodeMirror").on("click", ".cm-url", (e) => {
+        const url = $(e.target).text().replace(/[\(\)]+/g, '');
+        shell.openExternal(url);  
+    });
+    
+    $(".CodeMirror").on("click", ".cm-page", (e) => {
+        const page = $(e.target).text().replace(/[\[|\]]+/g, '')
+        console.log(">>>", page);
+        search(page);
+    });
+    
+    $(".CodeMirror").on("click", ".cm-tag", (e) => {
+        const tag = $(e.target).text();
+        console.log(">>>", tag);
+        search(tag);
+    });    
 }
 
 function setTheme(name, editor) {
@@ -55,7 +100,15 @@ function setTheme(name, editor) {
     }
 
     localStorage.setItem("editorTheme", name);
+}
 
+function search(search) {
+    const searchInput = document.getElementById("searchinput")
+    searchInput.value = search;
+}
+
+function loadSidebarContent() {
+    loadFiles()
 }
 
 // function setMode(name, editor) {
@@ -86,4 +139,6 @@ function setTheme(name, editor) {
 //     localStorage.setItem("editorMode", name);
 // }
 
-setupEditor(editor);
+const editor = window.editor = setupEditor();
+setupMindlessEventHandler();
+loadSidebarContent();

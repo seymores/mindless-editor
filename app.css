@@ -1,15 +1,19 @@
 div.CodeMirror {
-    height: 100vh;
-    padding: 1em;
-    font-size: 13pt;
+    height: calc(100vh - 75px);
+    padding-left: 0.5em;
+    font-size: 12pt;
     /* font-family: 'Ubuntu Mono', monospace; */
     /* font-family: 'Source Code Pro', monospace; */
 }
 
 html, body{ 
     min-height: 100vh;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgb(210, 210, 210);
+}
+
+.container-fluid {
+    padding: 0px;
 }
 
 button {
@@ -78,7 +82,7 @@ div.editor-body {
 }
 
 .has-search .form-control {
-    padding-left: 2.375rem;
+    padding-left: 2.575rem;
 }
 
 .has-search .form-control-feedback {
@@ -91,7 +95,7 @@ div.editor-body {
     text-align: center;
     pointer-events: none;
     color: #aaa;
-    margin-left: 6.5rem;
+    margin-left: 6.2rem;
 }
 
 a.searchbar-navi-button {
@@ -112,14 +116,30 @@ span#home a {
     text-decoration: none;
 }
 
-ul.file-list > li:nth-of-type(odd) {
-    color: rgb(92, 91, 91);
+ul#file-list li {
+    font-size: 10pt;
+    padding: 0.2rem 0.4rem 0.1rem 0.4rem;
 }
 
-ul.file-list > li:nth-of-type(even) {
-    color: rgb(41, 31, 31);
+ul#file-list li a {
+    color: rgb(41, 41, 41);
+}
+
+ul#file-list li a:hover {
+    text-decoration: none;
+    color: #bb0293;
+}
+
+ul#file-list > li:nth-of-type(odd) {
+    background-color: rgb(233, 233, 233);
+}
+
+ul#file-list > li:nth-of-type(even) {
+    background-color: rgb(215, 215, 215);
 }
 
 div#mindlessEditor {
-    padding-top: 3em;
+    padding-top: 2.5em;
+    /* margin-top: 4.5em; */
+    /* height: calc(100vh - 75px); */
 }
