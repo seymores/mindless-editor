@@ -9,6 +9,7 @@
   "dependencies": {
     "cssnano": "^4.1.10",
     "jquery": "^3.5.1",
+    "lunr": "^2.3.8",
     "theme": "^0.1.0"
   },
   "devDependencies": {
