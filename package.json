@@ -3,22 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "electron.js",
-  "directories": {
-    "lib": "lib"
-  },
   "dependencies": {
     "cssnano": "^4.1.10",
     "jquery": "^3.5.1",
     "lunr": "^2.3.8",
     "theme": "^0.1.0"
   },
+  "build": {
+    "appId": "mindless",
+    "mac": {
+      "category": "public.app-category.productivity"
+    }
+  },
   "devDependencies": {
     "electron": "^8.2.5",
+    "electron-builder": "^22.6.0",
     "electron-reload": "^1.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron electron.js"
+    "start": "set DEV_MODE=true && electron electron.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",

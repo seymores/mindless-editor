@@ -6,7 +6,7 @@ function createWindow () {
   let win = new BrowserWindow({
     titleBarStyle: 'hiddenInset',
     opacity: 0.98,
-    width: 800,
+    width: 1050,
     height: 600,
     minHeight: 600,
     minWidth: 800,
@@ -20,9 +20,14 @@ function createWindow () {
   win.loadFile('electron.html')
 }
 
-require('electron-reload')(__dirname, {
-    electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-    hardResetMethod: 'exit'
-  });
+const isDev = process.env.DEV_MODE ? (process.env.DEV_MODE.trim() == "true") : false;
+
+if (isDev) {
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+        hardResetMethod: 'exit'
+      });
+}
+
 
 app.whenReady().then(createWindow)
