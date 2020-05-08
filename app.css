@@ -1,5 +1,5 @@
 div.CodeMirror {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 40px);
     padding-left: 0.5em;
     font-size: 12pt;
     /* font-family: 'Ubuntu Mono', monospace; */
@@ -23,7 +23,7 @@ button {
 .sidebar {
     position: sticky;
     order: 0;
-    height: 100vh;
+    height: calc(100vh - 38px);
     z-index: 1000;
     border-right: 1px solid rgba(0,0,0,.1);
     overflow-y: auto;
@@ -74,11 +74,10 @@ div.editor-body {
 }
 
 .searchbar {
-    height: 50px;
     background-color: rgb(210, 210, 210);
-    padding-left: 1em;
-    border-bottom: 1px solid rgba(109, 109, 109, 0.1);
-    margin-bottom: 1px;
+    padding-left: 4.7em;
+    border-bottom: 1px solid rgba(109, 109, 109, 0.3);
+    /* margin-bottom: 1px; */
 }
 
 .has-search .form-control {
@@ -95,7 +94,7 @@ div.editor-body {
     text-align: center;
     pointer-events: none;
     color: #aaa;
-    margin-left: 6.2rem;
+    margin-left: 4.3rem;
 }
 
 a.searchbar-navi-button {
@@ -138,8 +137,27 @@ ul#file-list > li:nth-of-type(even) {
     background-color: rgb(215, 215, 215);
 }
 
-div#mindlessEditor {
-    padding-top: 2.5em;
+input#searchinput {
+    height: 140%;    
+}
+
+/* div#mindlessEditor {
+    /* padding-top: 2.3em; */
     /* margin-top: 4.5em; */
-    /* height: calc(100vh - 75px); */
+    /* height: calc(100vh - 75px);
+} */
+
+nav#navibar {
+    border-radius: 0px;
+    padding-right: 3px;
+}
+
+/* nav#navibar btn-sm { */
+nav#navibar > button {
+    margin: 2px;    
+    padding: 0.1rem 0.5rem;
+}
+
+main#editormain {
+    margin-top: 38px;
 }

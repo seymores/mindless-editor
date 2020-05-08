@@ -20,6 +20,8 @@ function createWindow () {
   win.loadFile('electron.html')
 }
 
+console.log(">>>", process.env.DEV_MODE );
+
 const isDev = process.env.DEV_MODE ? (process.env.DEV_MODE.trim() == "true") : false;
 
 if (isDev) {
