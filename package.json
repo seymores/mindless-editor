@@ -1,5 +1,6 @@
 {
   "name": "mindful",
+  "productName": "Mindless",
   "version": "1.0.0",
   "description": "",
   "main": "electron.js",

@@ -81,7 +81,7 @@ div.editor-body {
 }
 
 .has-search .form-control {
-    padding-left: 2.575rem;
+    padding-left: 1.8rem;
 }
 
 .has-search .form-control-feedback {
@@ -93,7 +93,7 @@ div.editor-body {
     line-height: 2.375rem;
     text-align: center;
     pointer-events: none;
-    color: #aaa;
+    color: rgb(208, 208, 208);
     margin-left: 4.3rem;
 }
 
@@ -115,9 +115,13 @@ span#home a {
     text-decoration: none;
 }
 
+/* Sidebar file list */
 ul#file-list li {
     font-size: 10pt;
     padding: 0.2rem 0.4rem 0.1rem 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 ul#file-list li a {
@@ -130,15 +134,15 @@ ul#file-list li a:hover {
 }
 
 ul#file-list > li:nth-of-type(odd) {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(250, 250, 250);
 }
 
 ul#file-list > li:nth-of-type(even) {
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(240, 240, 240);
 }
 
 input#searchinput {
-    height: 140%;    
+    height: 130%;    
 }
 
 /* div#mindlessEditor {
@@ -155,9 +159,13 @@ nav#navibar {
 /* nav#navibar btn-sm { */
 nav#navibar > button {
     margin: 2px;    
-    padding: 0.1rem 0.5rem;
+    padding: 0.05rem 0.5rem;
 }
 
 main#editormain {
     margin-top: 38px;
+}
+
+.list-group-item {
+    border: 0px;
 }

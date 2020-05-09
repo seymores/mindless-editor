@@ -35,6 +35,7 @@
 
 .cm-s-mindless .cm-page:hover {
   text-decoration: underline;
+  text-decoration-style: double;
 }
 
 .cm-s-mindless .cm-url:hover {
