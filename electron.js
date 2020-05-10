@@ -1,4 +1,4 @@
-const { app, Menu, MenuItem, BrowserWindow } = require('electron')
+const { app, remote, Menu, BrowserWindow } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -25,7 +25,7 @@ function createWindow() {
 function setupMenu() {
   const template = [
     {
-      label: app.getName(),
+      label: app.name,
       submenu: [
         { role: 'about' },
         { label: 'Open directory', accelerator: 'CmdOrCtrl+O', },
@@ -71,12 +71,19 @@ function setupMenu() {
           click() {
             require('electron').shell.openExternal('https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax');
           }
+        },
+        {
+          label: "Toggle Dev Tools",
+          accelerator: "F12",
+          click: () => {
+            remote.getCurrentWebContents().toggleDevTools();
+          }
         }
       ]
     }
   ];
   const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)
+  // Menu.setApplicationMenu(menu)
 }
 
 console.log(">>>", process.env.DEV_MODE);
