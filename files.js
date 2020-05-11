@@ -17,7 +17,7 @@ function loadFiles() {
     $("ul#file-list").on("click", ".cm-file", (e) => {
         const fileItem = $(e.target);
         const file = fileItem.text();
-        // console.log(">>>", file);
+        // console.log(">>>", file);        
 
         fileItem.dblclick( e => {
             fileItem.prop("contentEditable", true);
