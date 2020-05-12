@@ -1,4 +1,4 @@
-const { app, remote, Menu, BrowserWindow } = require('electron')
+const { app, ipcMain, Menu, BrowserWindow } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -17,7 +17,7 @@ function createWindow() {
       scrollBounce: true,
     }
   })
-
+  
   // and load the index.html of the app.
   win.loadFile('electron.html')
 }
@@ -28,8 +28,9 @@ function setupMenu() {
       label: app.name,
       submenu: [
         { role: 'about' },
-        { label: 'Open directory', accelerator: 'CmdOrCtrl+O', },
-        { label: 'Reload' },
+        { label: 'Open directory', accelerator: 'CmdOrCtrl+O', click() { selectNoteDirectory() } },        
+        { role: 'forceReload' },
+        { role: 'toggleDevTools' },
         { type: 'separator' },
         { role: 'services', submenu: [] },
         { type: 'separator' },
@@ -43,7 +44,7 @@ function setupMenu() {
     {
       label: 'File',
       submenu: [
-        { label: 'New Note', accelerator: 'CmdOrCtrl+N', },
+        { label: 'New Note', accelerator: 'CmdOrCtrl+N', click() { newFile() } },
         { type: 'separator' },
         { label: 'Search', accelerator: 'CmdOrCtrl+L', },
       ]
@@ -71,19 +72,12 @@ function setupMenu() {
           click() {
             require('electron').shell.openExternal('https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax');
           }
-        },
-        {
-          label: "Toggle Dev Tools",
-          accelerator: "F12",
-          click: () => {
-            remote.getCurrentWebContents().toggleDevTools();
-          }
         }
       ]
     }
   ];
   const menu = Menu.buildFromTemplate(template)
-  // Menu.setApplicationMenu(menu)
+  Menu.setApplicationMenu(menu)
 }
 
 console.log(">>>", process.env.DEV_MODE);
@@ -97,5 +91,23 @@ if (isDev) {
   });
 }
 
+// ipcMain.on('new-file', async (event, arg) =>{
+//   console.log("new file invoke");
+// });
+
+
+function selectNoteDirectory(arg) {
+  console.trace(arg);
+}
+
+function newFile(arg) {
+  console.log(">>>>> newfile")
+  const focusedWindow = BrowserWindow.getFocusedWindow();
+  focusedWindow.webContents.send('new-file');
+
+  // ipcRenderer.invoke('new-file', (event, arg) => {
+  //   console.log("sent new file event");
+  // });
+}
 
 app.whenReady().then(createWindow).then(setupMenu);
