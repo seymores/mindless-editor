@@ -1,5 +1,9 @@
-const { app, ipcMain, Menu, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, ipcMain, Menu, BrowserWindow } = require('electron');
+const moment = require('moment');
+const path = require('path');
+
+let configuration = { defaultDir: '/Users/ping/Google Drive/Notes' };
+global['configuration'] = configuration;
 
 function createWindow() {
   // Create the browser window.
@@ -20,6 +24,11 @@ function createWindow() {
   
   // and load the index.html of the app.
   win.loadFile('electron.html')
+
+  // // load configurations
+  // const configuration = { deafultDir: '/Users/ping/Google Drive/Notes' }
+  // win.webContents.send('config', configuration);
+
 }
 
 function setupMenu() {
@@ -91,17 +100,21 @@ if (isDev) {
   });
 }
 
-// ipcMain.on('new-file', async (event, arg) =>{
-//   console.log("new file invoke");
-// });
-
+ipcMain.handle('configuration', async (event, arg) => {
+  // const configuration = { defaultDir: '/Users/ping/Google Drive/Notes' }
+  console.log("Handling > ", configuration);
+  return configuration;
+});
 
 function selectNoteDirectory(arg) {
   console.trace(arg);
 }
 
 function newFile(arg) {
-  console.log(">>>>> newfile")
+  const filename = moment().format('YYYYMMDDhhmm');
+
+  console.log(">>>>> newfile", filename);
+
   const focusedWindow = BrowserWindow.getFocusedWindow();
   focusedWindow.webContents.send('new-file');
 

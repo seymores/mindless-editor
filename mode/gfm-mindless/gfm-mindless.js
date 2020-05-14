@@ -42,7 +42,7 @@
 
         if (stream.match(pageLinkRE) &&
            (stream.start == 0 || /\W/.test(stream.string.charAt(stream.start - 1)))) {
-            console.log(">>>> stream.string", stream.string);
+            // console.log(">>>> stream.string", stream.string);
           return "page";
         }
 
