@@ -5,7 +5,8 @@ const fs = require('fs');
 
 function loadFiles(defaultDir) {
 
-    const sidebarList = $("ul#file-list")
+    const sidebarList = $("ul#file-list");
+
     fs.readdir(defaultDir, (err, files) => {    
         files.forEach( f => {
             sidebarList.append(`<li class="file list-group-item" contenteditable="false"><a class="cm-file" href="#">${f}</a></li>`)
@@ -39,8 +40,10 @@ function load(filepath) {
     // console.log(">>>>>", remote.getGlobal('configuration'));
 }
 
-ipcRenderer.on('new-file', (event, arg) => {
-    console.log("Event new-file");
+ipcRenderer.on('new-file', (event, filename) => {
+    console.log("Event new-file>>", filename);
+    const sidebarList = $("ul#file-list")
+    sidebarList.prepend(`<li class="file list-group-item" contenteditable="false"><a class="cm-file" href="#">${filename}</a></li>`)
 });
 
 module.exports = {

@@ -1,9 +1,14 @@
 const { app, ipcMain, Menu, BrowserWindow } = require('electron');
 const moment = require('moment');
 const path = require('path');
+const fs = require('fs').promises;
+
 
 let configuration = { defaultDir: '/Users/ping/Google Drive/Notes' };
 global['configuration'] = configuration;
+
+let lastFileName = undefined;
+
 
 function createWindow() {
   // Create the browser window.
@@ -110,13 +115,23 @@ function selectNoteDirectory(arg) {
   console.trace(arg);
 }
 
-function newFile(arg) {
-  const filename = moment().format('YYYYMMDDhhmm');
+async function newFile(arg) {
+  const filename = Number.parseInt(moment().format('YYYYMMDDhhmm'));
 
-  console.log(">>>>> newfile", filename);
+  if (!lastFileName) {
+    lastFileName = filename;
+  } else if ( lastFileName >= filename ) {
+    lastFileName = lastFileName+1;
+  } else {
+    lastFileName = filename;
+  }
+
+  console.log(">>>>> newfile", lastFileName);
+
+  await fs.writeFile(`${configuration.defaultDir}/${lastFileName}.md`, `# ${lastFileName}`);
 
   const focusedWindow = BrowserWindow.getFocusedWindow();
-  focusedWindow.webContents.send('new-file');
+  focusedWindow.webContents.send('new-file', `${lastFileName}.md`);
 
   // ipcRenderer.invoke('new-file', (event, arg) => {
   //   console.log("sent new file event");
