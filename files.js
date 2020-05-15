@@ -33,20 +33,25 @@ function loadFiles(dir) {
             console.log("renameFile:", file);
         });
         
-        ipcRenderer.invoke('select-file', file);
-        load(`${defaultDir}/${file}`);
+        // ipcRenderer.invoke('select-file', file);
+        load(file);
     });
 }
 
-function load(filepath) {
+function load(file) {
+
+    const filepath = `${defaultDir}/${file}`;
 
     console.log(">>>> filepath", filepath);
 
     fs.readFile(filepath, 'utf-8', (err, data) => {
+        console.log(filepath, "Err=", err);
+        console.log(">>>", data);
+
         window.editor.setValue(data);
     });
 
-    // console.log(">>>>>", remote.getGlobal('configuration'));
+    ipcRenderer.invoke('select-file', file);
 }
 
 ipcRenderer.on('new-file', (event, filename) => {
@@ -67,7 +72,7 @@ ipcRenderer.on('delete-file', (event, file) => {
 
     console.log(fileItem);
     fileItem.remove();
-    load(`${defaultDir}/${nextFile}`);
+    load(nextFile);
 });
 
 function generateFileId(filename) {
