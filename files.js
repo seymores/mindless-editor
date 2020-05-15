@@ -1,9 +1,11 @@
 // const { ipcRenderer, remote } = require('electron');
 const $ = require('jquery');
-const fs = require('fs');
+const fs = require('fs').promises;
 const { ipcRenderer } = require('electron');
 
 let defaultDir = undefined;
+let selectedFile = undefined;
+
 
 function loadFiles(dir) {
 
@@ -39,6 +41,7 @@ function loadFiles(dir) {
 }
 
 function load(file) {
+    selectedFile = file;
 
     const filepath = `${defaultDir}/${file}`;
 
@@ -52,6 +55,20 @@ function load(file) {
     });
 
     ipcRenderer.invoke('select-file', file);
+}
+
+async function saveContent(file, content) {
+    try {
+        const filepath = `${defaultDir}/${file}`;
+        await fs.writeFile(filepath, content);
+        ipcRenderer.invoke('saved-file', file);
+    } catch (err) {
+        console.warn("Error saving file: ", err);
+    }
+}
+
+async function saveCurrentContent(content) {
+    saveContent(selectedFile, content);
 }
 
 ipcRenderer.on('new-file', (event, filename) => {
@@ -81,5 +98,7 @@ function generateFileId(filename) {
 }
 
 module.exports = {
-    loadFiles
+    loadFiles,
+    saveContent,
+    saveCurrentContent
 }

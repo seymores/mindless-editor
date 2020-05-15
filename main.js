@@ -118,6 +118,10 @@ ipcMain.handle('select-file', (event, filename) => {
   currentFile = filename;
 });
 
+ipcMain.handle('saved-file', (event, filename) => {
+  console.log('saved file>>', filename);
+});
+
 function selectNoteDirectory(arg) {
   console.trace(arg);
 }

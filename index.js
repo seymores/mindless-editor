@@ -1,7 +1,6 @@
 const $ = require('jquery')
 const { shell, remote } = require('electron')
-const {loadFiles} = require('./files')
-
+const { loadFiles, saveCurrentContent } = require('./files')
 
 function setupEditor() {
     const editorDiv = document.getElementById("codemirror-editor"); // || document.getElementById("mindlessEditor") || document.body;
@@ -12,15 +11,22 @@ function setupEditor() {
     });
 
     editor.onkeyup = () => {
-        localStorage.setItem("content", editor.textContent);
+
+        // TODO : Refactor localstorage dependency
+        // localStorage.setItem("content", editor.textContent);
+        saveCurrentContent(editor.getValue());
     };
 
+    // TODO: Refactor remove this
     const previousContent = localStorage.getItem("content");
+
     editor.on("blur", () => {
         // console.log("text changed?", editor.getValue());
         const savedLength = previousContent ? previousContent.length : 0;
         if (savedLength != editor.getValue().length) {
-            localStorage.setItem("content", editor.getValue());
+            // localStorage.setItem("content", editor.getValue());
+
+            saveCurrentContent(editor.getValue());
         }
     });
 
