@@ -1,5 +1,5 @@
 const $ = require('jquery')
-const { shell, remote, ipcRenderer } = require('electron')
+const { shell, remote } = require('electron')
 const {loadFiles} = require('./files')
 
 

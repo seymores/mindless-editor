@@ -1,4 +1,4 @@
-const { app, ipcMain, Menu, BrowserWindow } = require('electron');
+const { app, dialog, ipcMain, Menu, BrowserWindow } = require('electron');
 const moment = require('moment');
 const path = require('path');
 const fs = require('fs').promises;
@@ -8,6 +8,7 @@ let configuration = { defaultDir: '/Users/ping/Google Drive/Notes' };
 global['configuration'] = configuration;
 
 let lastFileName = undefined;
+let currentFile = undefined;
 
 
 function createWindow() {
@@ -58,7 +59,8 @@ function setupMenu() {
     {
       label: 'File',
       submenu: [
-        { label: 'New Note', accelerator: 'CmdOrCtrl+N', click() { newFile() } },
+        { label: 'New Note', accelerator: 'Cmd+N', click() { newFile() } },
+        { label: 'Delete Note', accelerator: 'Cmd+Backspace', click() { deleteFile() }},
         { type: 'separator' },
         { label: 'Search', accelerator: 'CmdOrCtrl+L', },
       ]
@@ -111,6 +113,11 @@ ipcMain.handle('configuration', async (event, arg) => {
   return configuration;
 });
 
+ipcMain.handle('select-file', (event, filename) => {
+  console.log('selecting file>>', filename);
+  currentFile = filename;
+});
+
 function selectNoteDirectory(arg) {
   console.trace(arg);
 }
@@ -132,10 +139,29 @@ async function newFile(arg) {
 
   const focusedWindow = BrowserWindow.getFocusedWindow();
   focusedWindow.webContents.send('new-file', `${lastFileName}.md`);
-
-  // ipcRenderer.invoke('new-file', (event, arg) => {
-  //   console.log("sent new file event");
-  // });
 }
+
+function deleteFile() {
+  console.warn("deleting file");
+  const options  = {
+    type: 'question',
+    detail: `Click Yes to delete ${currentFile}`,
+    buttons: ["Yes","No"],
+    message: "Do you really want to delete this note?"
+   }
+  const response = dialog.showMessageBox(options);
+  response.then(async result => {
+    console.log(result);
+    if (result.response == 0) {
+      await fs.unlink(`${configuration.defaultDir}/${currentFile}`);
+      const focusedWindow = BrowserWindow.getFocusedWindow();
+      focusedWindow.webContents.send('delete-file', `${currentFile}`);
+      console.log("confirm delete file"); 
+    }
+  }).catch( err => {
+    console.warn("Failed to delete file: ", err);
+  });
+}
+
 
 app.whenReady().then(createWindow).then(setupMenu);

@@ -3,7 +3,7 @@
   "productName": "Mindless",
   "version": "1.0.0",
   "description": "",
-  "main": "electron.js",
+  "main": "main.js",
   "dependencies": {
     "cssnano": "^4.1.10",
     "jquery": "^3.5.1",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEV_MODE=true electron electron.js",
+    "start": "DEV_MODE=true electron main.js",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
