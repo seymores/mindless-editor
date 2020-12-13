@@ -24,16 +24,17 @@ function createWindow() {
     scrollBounce: true,
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
       scrollBounce: true,
     }
   })
   
+  // // load configurations
+  const configuration = { defaultDir: '/Users/ping/Google Drive/Notes' }
+  win.webContents.send('config', configuration);
+
   // and load the index.html of the app.
   win.loadFile('electron.html')
-
-  // // load configurations
-  // const configuration = { deafultDir: '/Users/ping/Google Drive/Notes' }
-  // win.webContents.send('config', configuration);
 
 }
 

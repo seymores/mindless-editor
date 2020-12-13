@@ -3,3 +3,6 @@ dist
 .vscode
 *.swp
 node_modules
+
+.fake
+.ionide

@@ -11,7 +11,6 @@ function setupEditor() {
     });
 
     editor.onkeyup = () => {
-
         // TODO : Refactor localstorage dependency
         // localStorage.setItem("content", editor.textContent);
         saveCurrentContent(editor.getValue());
@@ -38,6 +37,7 @@ function setupEditor() {
 }
 
 function setupMindlessEventHandler() {
+    
     $(".CodeMirror").on("click", ".cm-link", (e) => {
         const url = $(e.target).next('.cm-url').text().replace(/[\(\)]+/g, '') || $(e.target).text().replace(/[\(\)]+/g, '');
         shell.openExternal(url);  
